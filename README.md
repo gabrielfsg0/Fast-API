@@ -106,7 +106,7 @@ Durante o desenvolvimento deste projeto foram aplicados conhecimentos de:
 - Integração com banco de dados;
 - ORM utilizando SQLAlchemy;
 - Migrações utilizando Alembic;
-- Aplicação de JWT (Json Web Tokens)
+- Aplicação de JWT (JSON Web Tokens)
 - Organização modular de projetos;
 - Boas práticas de desenvolvimento.
 
