@@ -26,7 +26,8 @@ API/
 │
 ├── main.py
 ├── database.py
-├── models.py
+├── model.py
+├── dependencies.py
 ├── schemas.py
 │
 ├── routes/
