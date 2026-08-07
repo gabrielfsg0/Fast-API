@@ -45,7 +45,8 @@ API/
 | Arquivo | Descrição |
 |---------|-----------|
 | `main.py` | Inicialização da aplicação FastAPI e registro das rotas |
-| `models.py` | Definição das entidades e tabelas do banco |
+| `model.py` | Definição das entidades e tabelas do banco |
+| `dependencies.py` | Criação de dependências com banco de dados e tokens|
 | `schemas.py` | Modelos de validação e estrutura dos dados recebidos |
 | `routes/` | Organização dos endpoints da aplicação |
 | `requirements.txt` | Dependências utilizadas no projeto |
