@@ -1,6 +1,5 @@
-#classes que cria no python usando a estrutura pydantic -> forca a tipagem dos dados
-from pydantic import BaseModel #definir modelos de dados
-from typing import Optional, List #da para classes parametros opcionais 
+from pydantic import BaseModel 
+from typing import Optional, List 
 
 class UsurarioSchema(BaseModel):
     nome: str
@@ -10,7 +9,7 @@ class UsurarioSchema(BaseModel):
     admin: Optional[bool] 
 
     class Config:
-        from_atributes = True #faz com que os dados passados acima nao sejam interpretados como um dicionario python mas sim orm (objective relative model) - > classe
+        from_atributes = True
 
 class PedidoSchema(BaseModel):
     id_usuario: int
@@ -36,7 +35,7 @@ class ItemPedidoSchema (BaseModel):
         from_atributes = True 
 
 
-class ResponsePedidoSchema(BaseModel): #forma padrao de resposta
+class ResponsePedidoSchema(BaseModel):
     id: int
     status: str
     preco: float
