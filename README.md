@@ -45,11 +45,9 @@ API/
 | Arquivo | Descrição |
 |---------|-----------|
 | `main.py` | Inicialização da aplicação FastAPI e registro das rotas |
-| `database.py` | Configuração da conexão com o banco de dados |
 | `models.py` | Definição das entidades e tabelas do banco |
 | `schemas.py` | Modelos de validação e estrutura dos dados recebidos |
 | `routes/` | Organização dos endpoints da aplicação |
-| `alembic/` | Histórico das alterações realizadas no banco |
 | `requirements.txt` | Dependências utilizadas no projeto |
 
 ---
@@ -83,16 +81,30 @@ Alteração dos modelos (models.py)
 
           ↓
 
-Criação da migration utilizando Alembic
+Criação da migration utilizando Alembic (py -m alembic revision --autogenerate -m "description")
 
           ↓
 
-Aplicação da migration no banco
+Aplicação da migration no banco (py -m alembic upgrade head)
 
           ↓
 
 Banco de dados atualizado
 
 ```
+
+---
+
+# 📚 Conceitos Aplicados
+
+Durante o desenvolvimento deste projeto foram aplicados conhecimentos de:
+
+- Desenvolvimento de APIs REST;
+- Arquitetura backend utilizando Python;
+- Integração com banco de dados;
+- ORM utilizando SQLAlchemy;
+- Migrações utilizando Alembic;
+- Organização modular de projetos;
+- Boas práticas de desenvolvimento.
 
 ---
