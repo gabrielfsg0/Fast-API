@@ -1,23 +1,56 @@
-Banco de Dados
+API REST com FastAPI e Banco de Dados
+📌 Sobre o projeto
 
-O projeto utiliza SQLAlchemy para modelagem das entidades e interação com o banco de dados. As tabelas são representadas por classes Python definidas no arquivo model.py, seguindo o conceito de ORM (Object-Relational Mapping).
+Este projeto consiste no desenvolvimento de uma API REST utilizando Python e FastAPI, com integração a um banco de dados relacional e gerenciamento das tabelas através do SQLAlchemy e Alembic.
 
-Para controlar a evolução da estrutura do banco, foi utilizado Alembic, responsável pelo versionamento e execução das migrations.
+O objetivo da aplicação é demonstrar a criação de uma API estruturada seguindo boas práticas de desenvolvimento, incluindo organização de rotas, modelos de dados, migrações de banco e separação de responsabilidades.
 
-O fluxo utilizado é:
+🚀 Tecnologias utilizadas
+Python
+FastAPI - criação dos endpoints da API
+SQLAlchemy - ORM para comunicação com o banco de dados
+Alembic - gerenciamento das migrações do banco de dados
+Uvicorn - servidor ASGI para execução da aplicação
+SQLite/PostgreSQL - banco de dados relacional
+📂 Estrutura do projeto
+API/
+│
+├── main.py                 # Arquivo principal da aplicação
+├── models.py               # Definição das tabelas e modelos do banco
+├── database.py             # Configuração da conexão com o banco
+├── schemas.py              # Modelos de validação dos dados
+│
+├── routes/
+│   ├── auth_routes.py      # Rotas relacionadas à autenticação
+│   └── order_routes.py     # Rotas relacionadas aos pedidos
+│
+├── alembic/
+│   └── migrations/         # Histórico das alterações do banco
+│
+├── requirements.txt        # Dependências do projeto
+└── README.md
+🗄️ Modelagem do banco de dados
 
-model.py → Alembic migration → banco de dados
+A criação do banco de dados foi realizada utilizando o SQLAlchemy, onde as tabelas foram definidas através dos modelos presentes no arquivo models.py.
 
-As migrations permitem registrar alterações como criação de tabelas, adição ou alteração de colunas e relacionamentos, mantendo o banco sincronizado com a aplicação.
+Cada classe representa uma entidade do sistema e contém:
 
-Para criar uma migration:
+Nome da tabela no banco de dados;
+Colunas e seus respectivos tipos;
+Chaves primárias;
+Relacionamentos entre entidades;
+Restrições necessárias para garantir a integridade dos dados.
 
-alembic revision --autogenerate -m "description"
+Para controlar a evolução da estrutura do banco foi utilizada a biblioteca Alembic.
 
-Para aplicar as migrations:
+O Alembic permite criar e aplicar migrações, registrando todas as alterações realizadas no banco de dados sem a necessidade de recriar as tabelas manualmente.
 
-alembic upgrade head
+Fluxo utilizado:
 
-Para reverter a última migration:
-
-alembic downgrade -1
+models.py
+     ↓
+Alembic detecta alterações
+     ↓
+Criação da migration
+     ↓
+Aplicação no banco de dados
